@@ -2,8 +2,15 @@
 
 /// Modify the function `gcd` in such a way that the function computes the
 /// greatest common divisor of two 32-bit integers.
-let gcd a b =
-  0
+let rec gcd a b =
+  // match (a, b) with
+  // // | (a, 0) -> a
+  // // | _ -> gcd b (a % b) 
+
+  match b with 
+  | 0 -> a
+  | _ -> gcd b (a % b)
+  
 
 gcd 360 210
 |> printfn "%d"
